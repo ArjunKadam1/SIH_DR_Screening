@@ -1,0 +1,38 @@
+SIH 2026 - V2 DR Screening
+END OF SESSION CHECKPOINT
+Date: 2026-09-08
+
+CURRENT STATUS
+---------------
+V1 baseline: COMPLETE
+V2 quality module: COMPLETE
+V2 decision layer: COMPLETE
+V2 Grad-CAM integration: COMPLETE
+V2 original APTOS split: COMPLETE
+V2 classifier setup: COMPLETE
+V2 ResNet-18 smoke test: COMPLETE
+
+SMOKE TEST
+----------
+Training images: 100
+Images per class: 20
+Epochs: 1
+Smoke accuracy: 55.00%
+Initial loss: 4.783894
+Final loss: 5.338304
+Minimum loss: 1.311512
+Training time: 6.44 minutes
+
+NEXT STEP
+---------
+Run 1 epoch on the COMPLETE 2562-image training set.
+Use 546-image validation set.
+Keep 554-image test set untouched.
+Measure training time before committing to 5-10 epochs.
+
+IMPORTANT
+---------
+Do NOT overwrite V1 trained_resnet18.mat.
+Do NOT use the test set for training.
+MA segmentation branch is parked.
+Vessel segmentation branch is parked.

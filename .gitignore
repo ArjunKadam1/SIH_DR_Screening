@@ -1,0 +1,23 @@
+# Big data - travels by SSD/cloud, never committed
+dataset/
+results/v2_cache_train/
+results/v2_cache_val/
+results/v2_checkpoints_A/
+results/v2_checkpoints_B/
+results/MA_patch_batches/
+results/**/*.mat
+# ...except the tiny config checkpoints
+!results/V2_RetinaAIApp_checkpoint.mat
+
+# Generated outputs
+reports/screening_report_*.pdf
+reports/screening_report_*.txt
+reports/smoke_test_*.csv
+
+# MATLAB / OS junk
+*.asv
+*.m~
+__pycache__/
+*.pyc
+.MATLABDriveTag
+Thumbs.db

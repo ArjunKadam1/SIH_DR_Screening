@@ -1,0 +1,9 @@
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+pillow>=10.0.0
+numpy>=1.26.0
+python-multipart>=0.0.9
+# Optional: uncomment when ONNX model is exported from MATLAB
+# onnxruntime>=1.17.0
+# torch>=2.2.0
+# torchvision>=0.17.0

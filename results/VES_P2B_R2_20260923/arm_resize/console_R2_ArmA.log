@@ -1,0 +1,20 @@
+R2-ARMA budget=160iters eval/ckpt every 40 (4 blocks) rng=42 lr=1e-4 bs=4 clip=1.0
+RESUME-CHECK fpNorm=39.259579 ckSum=-1307.510348 (expect 39.259579 / -1307.510348)
+GATE-REF median(iters1-10)=13.6151 trip-level=27.2302
+R2-ARMA iter=20/160 loss=13.5504 (ce=12.550 di=1.000) nPre=0.01 clip=0 elapsed=0.1min
+R2-ARMA iter=40/160 loss=13.5800 (ce=12.580 di=1.000) nPre=0.00 clip=0 elapsed=0.1min
+[R2-ARMA block1] eval 4 imgs: mean dFix=0.3729 dBest=0.3811 predFrac=0.1608
+R2-ARMA BLOCK 1 DONE pooled dFix=0.3729 dBest=0.3811
+R2-ARMA iter=60/160 loss=13.6639 (ce=12.664 di=1.000) nPre=0.00 clip=0 elapsed=0.1min
+R2-ARMA iter=80/160 loss=13.6896 (ce=12.690 di=1.000) nPre=0.00 clip=0 elapsed=0.2min
+[R2-ARMA block2] eval 4 imgs: mean dFix=0.3734 dBest=0.3814 predFrac=0.1590
+R2-ARMA BLOCK 2 DONE pooled dFix=0.3734 dBest=0.3814
+R2-ARMA iter=100/160 loss=13.6626 (ce=12.663 di=1.000) nPre=0.00 clip=0 elapsed=0.2min
+R2-ARMA iter=120/160 loss=13.6129 (ce=12.613 di=1.000) nPre=0.00 clip=0 elapsed=0.2min
+[R2-ARMA block3] eval 4 imgs: mean dFix=0.3715 dBest=0.3798 predFrac=0.1617
+R2-ARMA BLOCK 3 DONE pooled dFix=0.3715 dBest=0.3798
+R2-ARMA iter=140/160 loss=13.6834 (ce=12.683 di=1.000) nPre=0.00 clip=0 elapsed=0.3min
+R2-ARMA iter=160/160 loss=13.5094 (ce=12.509 di=1.000) nPre=0.00 clip=0 elapsed=0.3min
+[R2-ARMA block4] eval 4 imgs: mean dFix=0.3700 dBest=0.3779 predFrac=0.1651
+R2-ARMA BLOCK 4 DONE pooled dFix=0.3700 dBest=0.3779
+R2-ARMA DONE bestBlock=2 pooledDfix=0.3734

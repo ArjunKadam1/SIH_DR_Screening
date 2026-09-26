@@ -1,0 +1,4 @@
+TRAIN nImg=26136 nMsk=26136 | VAL nImg=7272 nMsk=7272
+NET built: dlnetwork
+VALFREQ=817 (=1/epoch)
+Training stopped: Error during training

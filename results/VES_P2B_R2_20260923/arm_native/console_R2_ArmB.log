@@ -1,0 +1,22 @@
+R2-ARMB budget=160iters eval/ckpt every 40 (4 blocks) stride=128 rng=42 lr=1e-4 bs=4 clip=1.0
+RESUME-CHECK fpNorm=39.259579 ckSum=-1307.510348 (expect 39.259579 / -1307.510348)
+PATCH-AUDIT total=256 kept(fov>=0.10)=256 vfrac med=0.1080 max=0.2382
+OPT patches=256 budget=160 blocks=4
+GATE-REF median(iters1-10)=13.3123 trip-level=26.6246
+R2-ARMB iter=20/160 loss=13.7278 (ce=12.742 di=0.986) nPre=4.80 clip=1 elapsed=0.1min
+R2-ARMB iter=40/160 loss=13.1611 (ce=12.178 di=0.983) nPre=13.74 clip=1 elapsed=0.1min
+[R2-ARMB block1] eval 4 imgs: mean dFix=0.0002 dBest=0.0496 predFrac=0.0068
+R2-ARMB BLOCK 1 DONE pooled dFix=0.0002 dBest=0.0496
+R2-ARMB iter=60/160 loss=13.0417 (ce=12.061 di=0.981) nPre=2.78 clip=1 elapsed=0.1min
+R2-ARMB iter=80/160 loss=12.9582 (ce=11.978 di=0.980) nPre=4.92 clip=1 elapsed=0.1min
+[R2-ARMB block2] eval 4 imgs: mean dFix=0.0001 dBest=0.0495 predFrac=0.0049
+R2-ARMB BLOCK 2 DONE pooled dFix=0.0001 dBest=0.0495
+R2-ARMB iter=100/160 loss=13.0484 (ce=12.066 di=0.982) nPre=8.61 clip=1 elapsed=0.1min
+R2-ARMB iter=120/160 loss=12.8747 (ce=11.893 di=0.982) nPre=10.84 clip=1 elapsed=0.2min
+[R2-ARMB block3] eval 4 imgs: mean dFix=0.0001 dBest=0.0496 predFrac=0.0070
+R2-ARMB BLOCK 3 DONE pooled dFix=0.0001 dBest=0.0496
+R2-ARMB iter=140/160 loss=12.5325 (ce=11.560 di=0.972) nPre=3.46 clip=1 elapsed=0.2min
+R2-ARMB iter=160/160 loss=12.9472 (ce=11.964 di=0.983) nPre=9.20 clip=1 elapsed=0.2min
+[R2-ARMB block4] eval 4 imgs: mean dFix=0.0002 dBest=0.0496 predFrac=0.0081
+R2-ARMB BLOCK 4 DONE pooled dFix=0.0002 dBest=0.0496
+R2-ARMB DONE bestBlock=1 pooledDfix=0.0002

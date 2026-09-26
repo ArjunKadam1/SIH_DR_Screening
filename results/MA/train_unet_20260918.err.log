@@ -1,0 +1,28 @@
+{Error using trainnet (line 15)
+Error evaluating validation metric "Loss".
+
+Error in trainMAUNet_TrackB_20260918 (line 57)
+[net, info] = trainnet(cdsTr, dlnet, @maCombinedLoss_TrackB_20260918, opts);
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Caused by:
+    Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('dlarray/dlgradient', 'C:\Program
+    Files\MATLAB\R2026a\toolbox\nnet\deep\deep\@dlarray\dlgradient.m', 105)" style="font-weight:bold">dlarray/dlgradient</a> (<a
+    href="matlab: opentoline('C:\Program Files\MATLAB\R2026a\toolbox\nnet\deep\deep\@dlarray\dlgradient.m',105,0)">line 105</a>)
+    Value to differentiate is not traced. It must be a traced real dlarray scalar. Use dlgradient inside a function called by dlfeval to
+    trace
+    the variables. By default, outputs of dlgradient are not traced. To trace outputs of dlgradient, set EnableHigherDerivatives=true.
+
+    Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('maCombinedLoss_TrackB_20260918', 'C:\Users\SHIVANYA
+    SALES\Desktop\DR tejas\SIH_DR_Screening\segmentation\microaneurysms\maCombinedLoss_TrackB_20260918.m', 22)"
+    style="font-weight:bold">maCombinedLoss_TrackB_20260918</a> (<a href="matlab: opentoline('C:\Users\SHIVANYA SALES\Desktop\DR
+    tejas\SIH_DR_Screening\segmentation\microaneurysms\maCombinedLoss_TrackB_20260918.m',22,0)">line 22</a>)
+    gradients = dlgradient(loss, Y);
+                ^^^^^^^^^^^^^^^^^^^
+    Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('nnet.internal.cnn.util.UserCodeException.fevalUserCode',
+    'C:\Program Files\MATLAB\R2026a\toolbox\nnet\cnn\+nnet\+internal\+cnn\+util\+UserCodeException\fevalUserCode.m', 11)"
+    style="font-weight:bold">nnet.internal.cnn.util.UserCodeException.fevalUserCode</a> (<a href="matlab: opentoline('C:\Program
+    Files\MATLAB\R2026a\toolbox\nnet\cnn\+nnet\+internal\+cnn\+util\+UserCodeException\fevalUserCode.m',11,0)">line 11</a>)
+        [varargout{1:nargout}] = feval(F, varargin{:});
+                                 ^^^^^^^^^^^^^^^^^^^^^
+} 
+ERROR: MATLAB error Exit Status: 0x00000001

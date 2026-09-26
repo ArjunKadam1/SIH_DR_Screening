@@ -1,0 +1,5 @@
+IMG 000c1434d8d7.png cls=Moderate grade=2 refer=1 rule=grade refScore=1.000 thr=0.30 esc=0 cal=88.4
+IMG 0024cdab0c1e.png cls=No_DR grade=0 refer=0 rule=grade refScore=0.000 thr=0.30 esc=0 cal=69.7
+IMG 1da4a17c18c9.png cls=No_DR grade=0 refer=0 rule=grade refScore=0.000 thr=0.30 esc=0 cal=99.9
+IMG 5f13e8a07344.png cls=SevereProlif grade=3 refer=1 rule=grade refScore=1.000 thr=0.30 esc=0 cal=52.5
+V1-COMPAT cls=Moderate grade=2 refer=1 rule=grade refScore=0.541

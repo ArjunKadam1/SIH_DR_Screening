@@ -1,0 +1,6 @@
+IMG 000c1434d8d7.png true=2(Moderate) rawsize=[2136 3216 3]
+  V1-raw: Moderate(2) conf=54.0
+  R50-raw: Moderate(2) conf=99.8 cal=88.4 merged=1
+IMG 0024cdab0c1e.png true=1(Mild) rawsize=[1736 2416 3]
+  V1-raw: Moderate(2) conf=47.8
+  R50-raw: No_DR(0) conf=91.7 cal=69.7 merged=1

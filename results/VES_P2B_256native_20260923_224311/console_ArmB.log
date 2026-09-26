@@ -1,0 +1,21 @@
+ARM-B NATIVE stride=128 rng=42 lr=1e-4 bs=4patches clip=1.0 epochs=10
+SPLIT train=[21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36] val=[37 38 39 40] (image-level, test 01-20 blind)
+RESUME-CHECK var=vesselNetWeightedTrained layers=48 fpNorm=39.259579 ckSum=-1307.510348 nTensors=36
+RESUME-CHECK first5cks=[-7.66946 -0.0763203 -2.76359 -0.0514386 -18.0209] (must match Arm A: fpNorm=39.259579 ckSum=-1307.510348)
+GRID H=584 W=565 ps=256 st=128 rs=[1 129 257 329] cs=[1 129 257 310] patches/img=16
+PATCH-AUDIT total=256 vfrac min=0.0347 med=0.1080 p90=0.1586 max=0.2382 mean=0.1083
+PATCH-AUDIT fovfrac<0.10 patches=0/256 (0.0%) — EXCLUDED as non-retina corners
+PATCH-AUDIT kept=256 vfrac min=0.0347 med=0.1080 p90=0.1586 max=0.2382 frac<0.01: 0 (0.0%)
+OPT seed=42 lr=1e-4 bs=4 clip=1.0 gpu=1 loss=vesselLoss_frozen patches=256 iters/ep=64 total=640
+ARM-B iter=20/640 ep=1 loss=13.7278 nPre=4.80 clip=1 elapsed=0.1min
+ARM-B iter=40/640 ep=1 loss=13.1610 nPre=13.70 clip=1 elapsed=0.1min
+{Error using assert
+Loss>5 sustained 50 iters — STOP.
+
+Error in trainVesselArmB_native (line 128)
+        assert(over5 < 50, 'Loss>5 sustained 50 iters — STOP.');
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 

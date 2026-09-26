@@ -1,0 +1,3 @@
+R50: Moderate(2) refer=1 esc=0 feat=activation_49_relu red=avg_pool rawMax=4.934 alpha=0.45 dec=Moderate
+V1-rollback: Moderate(2) refer=1 merged=0 red=pool5 feat=res5b_relu
+R50-TTA: Moderate(2) refer=1 dec=Moderate

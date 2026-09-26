@@ -1,0 +1,86 @@
+P6-ATT arch=attention3gates loss=focal+dice5 budget=640 eval/ckpt every 40 stride=128 rng=42 lr=1e-4 bs=4 clip=1.0
+{Error using abs
+Too many input arguments.
+
+Error in trainVesselP6_AttB (line 31)
+    d = max(abs(double(gather(extractdata(aT.Value{ia}))) - double(gather(extractdata(pT.Value{ip}))), [], 'all'));
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+P6-ATT arch=attention3gates loss=focal+dice5 budget=640 eval/ckpt every 40 stride=128 rng=42 lr=1e-4 bs=4 clip=1.0
+SPOT-CHECK Encoder-Stage-1-Conv-1/Weights maxabsdiff=0
+SPOT-CHECK Decoder-Stage-2-Conv-2/Bias maxabsdiff=0
+SPOT-CHECK encoderDecoderFinalConvLayer/Weights maxabsdiff=0
+RESUME-CHECK attNet fpNorm=41.157248 layers=69 (expect ~41.16 / 69)
+PATCH-AUDIT total=256 kept(fov>=0.10)=256 vfrac med=0.1080 max=0.2382
+TRIPWIRE probe0 vessel-P mean=0.37519 (fixed patches 1-4)
+GATE-REF median(iters1-10)=4.6313 trip-level=9.2626
+TRIPWIRE probe vessel-P mean: iter0=0.37519 iter10=0.35737 -> false
+TRIPWIRE-FLAG: predictions collapsing toward zero.
+P6-ATT iter=20/640 loss=4.5572 (focal=0.129 di=0.886) nPre=4.5085e+00 clip=1 elapsed=0.1min
+P6-ATT iter=40/640 loss=4.3119 (focal=0.130 di=0.836) nPre=4.0929e+00 clip=1 elapsed=0.1min
+[P6-ATT block1] eval 4 imgs: mean dFix=0.0323 dBest=0.1584 predFrac=0.0315
+P6-ATT BLOCK 1 DONE pooled dFix=0.0323 dBest=0.1584 sweeps=0.62
+P6-ATT iter=60/640 loss=4.2244 (focal=0.122 di=0.820) nPre=1.1763e+00 clip=1 elapsed=0.1min
+P6-ATT iter=80/640 loss=4.2036 (focal=0.126 di=0.816) nPre=5.6463e-01 clip=0 elapsed=0.1min
+[P6-ATT block2] eval 4 imgs: mean dFix=0.0012 dBest=0.1597 predFrac=0.0021
+P6-ATT BLOCK 2 DONE pooled dFix=0.0012 dBest=0.1597 sweeps=1.25
+P6-ATT iter=100/640 loss=4.2403 (focal=0.105 di=0.827) nPre=3.6776e+00 clip=1 elapsed=0.2min
+P6-ATT iter=120/640 loss=4.1620 (focal=0.113 di=0.810) nPre=4.7869e+00 clip=1 elapsed=0.2min
+[P6-ATT block3] eval 4 imgs: mean dFix=0.0000 dBest=0.1622 predFrac=0.0001
+P6-ATT BLOCK 3 DONE pooled dFix=0.0000 dBest=0.1622 sweeps=1.88
+P6-ATT iter=140/640 loss=4.0281 (focal=0.129 di=0.780) nPre=3.0665e+00 clip=1 elapsed=0.2min
+P6-ATT iter=160/640 loss=4.1471 (focal=0.129 di=0.804) nPre=7.7868e-01 clip=0 elapsed=0.3min
+[P6-ATT block4] eval 4 imgs: mean dFix=0.0001 dBest=0.1609 predFrac=0.0002
+P6-ATT BLOCK 4 DONE pooled dFix=0.0001 dBest=0.1609 sweeps=2.50
+P6-ATT iter=180/640 loss=4.1891 (focal=0.128 di=0.812) nPre=1.0372e+00 clip=1 elapsed=0.3min
+P6-ATT iter=200/640 loss=4.4564 (focal=0.116 di=0.868) nPre=3.1737e+00 clip=1 elapsed=0.3min
+[P6-ATT block5] eval 4 imgs: mean dFix=0.0000 dBest=0.1629 predFrac=0.0001
+P6-ATT BLOCK 5 DONE pooled dFix=0.0000 dBest=0.1629 sweeps=3.12
+P6-ATT iter=220/640 loss=4.2244 (focal=0.130 di=0.819) nPre=1.1632e+00 clip=1 elapsed=0.4min
+P6-ATT iter=240/640 loss=4.3230 (focal=0.113 di=0.842) nPre=1.1324e+00 clip=1 elapsed=0.4min
+[P6-ATT block6] eval 4 imgs: mean dFix=0.0000 dBest=0.1667 predFrac=0.0000
+P6-ATT BLOCK 6 DONE pooled dFix=0.0000 dBest=0.1667 sweeps=3.75
+P6-ATT iter=260/640 loss=4.3311 (focal=0.116 di=0.843) nPre=1.6660e+00 clip=1 elapsed=0.4min
+P6-ATT iter=280/640 loss=4.2779 (focal=0.104 di=0.835) nPre=2.2594e+00 clip=1 elapsed=0.4min
+[P6-ATT block7] eval 4 imgs: mean dFix=0.0000 dBest=0.1677 predFrac=0.0000
+P6-ATT BLOCK 7 DONE pooled dFix=0.0000 dBest=0.1677 sweeps=4.38
+P6-ATT iter=300/640 loss=4.1315 (focal=0.118 di=0.803) nPre=1.7662e+00 clip=1 elapsed=0.5min
+P6-ATT iter=320/640 loss=4.2813 (focal=0.118 di=0.833) nPre=9.2893e-01 clip=0 elapsed=0.5min
+[P6-ATT block8] eval 4 imgs: mean dFix=0.0000 dBest=0.1698 predFrac=0.0001
+P6-ATT BLOCK 8 DONE pooled dFix=0.0000 dBest=0.1698 sweeps=5.00
+P6-ATT iter=340/640 loss=4.2946 (focal=0.109 di=0.837) nPre=5.0317e-01 clip=0 elapsed=0.5min
+P6-ATT iter=360/640 loss=4.4160 (focal=0.113 di=0.861) nPre=2.5736e+00 clip=1 elapsed=0.6min
+[P6-ATT block9] eval 4 imgs: mean dFix=0.0002 dBest=0.1724 predFrac=0.0006
+P6-ATT BLOCK 9 DONE pooled dFix=0.0002 dBest=0.1724 sweeps=5.62
+P6-ATT iter=380/640 loss=4.2076 (focal=0.101 di=0.821) nPre=4.5683e+00 clip=1 elapsed=0.6min
+P6-ATT iter=400/640 loss=4.3022 (focal=0.119 di=0.837) nPre=1.2444e+00 clip=1 elapsed=0.6min
+[P6-ATT block10] eval 4 imgs: mean dFix=0.0000 dBest=0.1702 predFrac=0.0001
+P6-ATT BLOCK 10 DONE pooled dFix=0.0000 dBest=0.1702 sweeps=6.25
+P6-ATT iter=420/640 loss=4.3096 (focal=0.115 di=0.839) nPre=8.2929e-01 clip=0 elapsed=0.6min
+P6-ATT iter=440/640 loss=4.3910 (focal=0.112 di=0.856) nPre=1.5004e+00 clip=1 elapsed=0.7min
+[P6-ATT block11] eval 4 imgs: mean dFix=0.0024 dBest=0.1690 predFrac=0.0024
+P6-ATT BLOCK 11 DONE pooled dFix=0.0024 dBest=0.1690 sweeps=6.88
+P6-ATT iter=460/640 loss=4.2120 (focal=0.119 di=0.818) nPre=1.1608e+00 clip=1 elapsed=0.7min
+P6-ATT iter=480/640 loss=4.3055 (focal=0.137 di=0.834) nPre=2.1337e+00 clip=1 elapsed=0.7min
+[P6-ATT block12] eval 4 imgs: mean dFix=0.0450 dBest=0.1723 predFrac=0.0304
+P6-ATT BLOCK 12 DONE pooled dFix=0.0450 dBest=0.1723 sweeps=7.50
+P6-ATT iter=500/640 loss=4.2019 (focal=0.113 di=0.818) nPre=2.7857e+00 clip=1 elapsed=0.8min
+P6-ATT iter=520/640 loss=4.3235 (focal=0.112 di=0.842) nPre=8.8434e-01 clip=0 elapsed=0.8min
+[P6-ATT block13] eval 4 imgs: mean dFix=0.0000 dBest=0.1725 predFrac=0.0001
+P6-ATT BLOCK 13 DONE pooled dFix=0.0000 dBest=0.1725 sweeps=8.12
+P6-ATT iter=540/640 loss=4.3297 (focal=0.115 di=0.843) nPre=1.3074e+00 clip=1 elapsed=0.8min
+P6-ATT iter=560/640 loss=4.1459 (focal=0.111 di=0.807) nPre=3.6646e+00 clip=1 elapsed=0.8min
+[P6-ATT block14] eval 4 imgs: mean dFix=0.0000 dBest=0.1745 predFrac=0.0000
+P6-ATT BLOCK 14 DONE pooled dFix=0.0000 dBest=0.1745 sweeps=8.75
+P6-ATT iter=580/640 loss=4.2219 (focal=0.118 di=0.821) nPre=7.9666e-01 clip=0 elapsed=0.9min
+P6-ATT iter=600/640 loss=4.3523 (focal=0.098 di=0.851) nPre=7.6547e-01 clip=0 elapsed=0.9min
+[P6-ATT block15] eval 4 imgs: mean dFix=0.0000 dBest=0.1750 predFrac=0.0000
+P6-ATT BLOCK 15 DONE pooled dFix=0.0000 dBest=0.1750 sweeps=9.38
+P6-ATT iter=620/640 loss=4.2168 (focal=0.103 di=0.823) nPre=3.3138e+00 clip=1 elapsed=0.9min
+P6-ATT iter=640/640 loss=4.3900 (focal=0.098 di=0.858) nPre=8.7306e-01 clip=0 elapsed=0.9min
+[P6-ATT block16] eval 4 imgs: mean dFix=0.0000 dBest=0.1739 predFrac=0.0000
+P6-ATT BLOCK 16 DONE pooled dFix=0.0000 dBest=0.1739 sweeps=10.00
+P6-ATT DONE bestBlock=12 pooledDfix=0.0450

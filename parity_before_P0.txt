@@ -1,0 +1,55 @@
+P0 BEFORE BASELINE (unmodified RetinaAIApp_Lesion, lesion checkbox OFF)
+Recorded: 2026-09-26 14:24:22
+Method: headlessAnalyze card texts (Result struct is private; predictedClass recovered 1:1 from severity text)
+
+=== C:\Users\SHIVANYA SALES\Desktop\DR tejas\SIH_DR_Screening\dataset\APTOS\train_images\000c1434d8d7.png ===
+severity=Moderate
+grade=2 / 4
+referable=YES
+score=99.84%
+reco=REFER FOR OPHTHALMOLOGIST REVIEW
+quality=ACCEPT — Image quality is acceptable.
+enhance=Not needed
+banner=
+qFocus=0.0338
+qIllum=0.269 (sd 0.051)
+qFov=74.5%
+details=Margin 99.7pp · high · TTA off · SO n/a
+lesion=Lesion not run yet.
+lesionNote=MA 0.42 val / P3-A vessel dFix 0.37 val. Supporting evidence only, NOT clinical.
+reportEnabled=on
+
+=== C:\Users\SHIVANYA SALES\Desktop\DR tejas\SIH_DR_Screening\dataset\APTOS\train_images\1da4a17c18c9.png ===
+severity=No DR
+grade=0 / 4
+referable=NO
+score=100.00%
+reco=NO IMMEDIATE REFERRAL - ROUTINE SCREENING
+quality=ACCEPT — Image quality is acceptable.
+enhance=Not needed
+banner=
+qFocus=0.0739
+qIllum=0.414 (sd 0.072)
+qFov=78.8%
+details=Margin 100.0pp · high · TTA off · SO n/a
+lesion=Lesion not run yet.
+lesionNote=MA 0.42 val / P3-A vessel dFix 0.37 val. Supporting evidence only, NOT clinical.
+reportEnabled=on
+
+=== C:\Users\SHIVANYA SALES\Desktop\DR tejas\SIH_DR_Screening\dataset\DRIVE\training\images\37_training.tif ===
+severity=No DR
+grade=0 / 4
+referable=NO
+score=100.00%
+reco=NO IMMEDIATE REFERRAL - ROUTINE SCREENING
+quality=ACCEPT — Image quality is acceptable.
+enhance=Not needed
+banner=
+qFocus=0.1018
+qIllum=0.427 (sd 0.085)
+qFov=68.4%
+details=Margin 100.0pp · high · TTA off · SO n/a
+lesion=Lesion not run yet.
+lesionNote=MA 0.42 val / P3-A vessel dFix 0.37 val. Supporting evidence only, NOT clinical.
+reportEnabled=on
+

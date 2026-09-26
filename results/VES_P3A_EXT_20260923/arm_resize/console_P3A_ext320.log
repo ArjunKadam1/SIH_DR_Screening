@@ -1,0 +1,19 @@
+P3A-EXT NEW-BRANCH from block4 +160 (blocks 5-8) same methodology
+RESUME block4 refMed carried=2.2046 trip-level=4.4092
+RESUME-CHECK fpNorm=39.261579 layers=48
+W0 recomputed=10.4785 (expect 10.4785)
+RNG replayed seed=42, discarded 10x randperm(16)
+OPT lr=1e-4 bs=4 clip=1.0 gpu=1 adamStep resumes at 160, moments fresh
+P3A-EXT iter=200/320 loss=1.7032 (ce=0.796 di=0.907) nPre=2.2177e+01 clip=1 elapsed=0.2min
+[P3A-EXT block5] eval 4 imgs: mean dFix=0.3367 dBest=0.3423 predFrac=0.1592
+P3A-EXT BLOCK 5 DONE pooled dFix=0.3367 dBest=0.3423 sweeps=50.0
+P3A-EXT iter=240/320 loss=1.6615 (ce=0.754 di=0.908) nPre=3.5620e+01 clip=1 elapsed=0.2min
+[P3A-EXT block6] eval 4 imgs: mean dFix=0.3127 dBest=0.3164 predFrac=0.1434
+P3A-EXT BLOCK 6 DONE pooled dFix=0.3127 dBest=0.3164 sweeps=60.0
+P3A-EXT iter=280/320 loss=2.3724 (ce=1.549 di=0.823) nPre=7.9853e+02 clip=1 elapsed=0.3min
+[P3A-EXT block7] eval 4 imgs: mean dFix=0.2743 dBest=0.2851 predFrac=0.1700
+P3A-EXT BLOCK 7 DONE pooled dFix=0.2743 dBest=0.2851 sweeps=70.0
+P3A-EXT iter=320/320 loss=1.7546 (ce=0.914 di=0.841) nPre=3.6060e+02 clip=1 elapsed=0.4min
+[P3A-EXT block8] eval 4 imgs: mean dFix=0.3100 dBest=0.3188 predFrac=0.1270
+P3A-EXT BLOCK 8 DONE pooled dFix=0.3100 dBest=0.3188 sweeps=80.0
+P3A-EXT DONE bestBlock(5-8)=5 pooledDfix=0.3367 (P3-A block2 0.3735)

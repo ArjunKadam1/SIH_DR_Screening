@@ -1,0 +1,22 @@
+P4-ARMB loss=norm budget=160 eval/ckpt every 40 stride=128 rng=42 lr=1e-4 bs=4 clip=1.0
+RESUME-CHECK fpNorm=39.259579 ckSum=-1307.510348 (expect 39.259579 / -1307.510348)
+W0 FIXED=10.4785 (must match Arm A log)
+PATCH-AUDIT total=256 kept(fov>=0.10)=256 vfrac med=0.1080 max=0.2382
+GATE-REF median(iters1-10)=6.1559 trip-level=12.3118
+P4-ARMB iter=20/160 loss=6.1905 (ce=1.257 di=0.987 wV=13.96) nPre=4.9709e+00 clip=1 elapsed=0.1min
+P4-ARMB iter=40/160 loss=6.0738 (ce=1.199 di=0.975 wV=8.83) nPre=1.3962e+01 clip=1 elapsed=0.1min
+[P4-ARMB block1] eval 4 imgs: mean dFix=0.0004 dBest=0.0484 predFrac=0.0082
+P4-ARMB BLOCK 1 DONE pooled dFix=0.0004 dBest=0.0484 sweeps=0.62
+P4-ARMB iter=60/160 loss=6.0743 (ce=1.203 di=0.974 wV=7.75) nPre=1.1287e+01 clip=1 elapsed=0.1min
+P4-ARMB iter=80/160 loss=6.0375 (ce=1.191 di=0.969 wV=7.53) nPre=8.7947e+00 clip=1 elapsed=0.1min
+[P4-ARMB block2] eval 4 imgs: mean dFix=0.0005 dBest=0.0496 predFrac=0.0104
+P4-ARMB BLOCK 2 DONE pooled dFix=0.0005 dBest=0.0496 sweeps=1.25
+P4-ARMB iter=100/160 loss=6.0513 (ce=1.191 di=0.972 wV=7.98) nPre=5.6850e+00 clip=1 elapsed=0.1min
+P4-ARMB iter=120/160 loss=6.0290 (ce=1.167 di=0.972 wV=7.00) nPre=7.1851e+00 clip=1 elapsed=0.2min
+[P4-ARMB block3] eval 4 imgs: mean dFix=0.0003 dBest=0.0496 predFrac=0.0103
+P4-ARMB BLOCK 3 DONE pooled dFix=0.0003 dBest=0.0496 sweeps=1.88
+P4-ARMB iter=140/160 loss=5.9768 (ce=1.153 di=0.965 wV=5.81) nPre=1.1738e+01 clip=1 elapsed=0.2min
+P4-ARMB iter=160/160 loss=6.0882 (ce=1.192 di=0.979 wV=7.04) nPre=1.2374e+01 clip=1 elapsed=0.2min
+[P4-ARMB block4] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P4-ARMB BLOCK 4 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=2.50
+P4-ARMB DONE bestBlock=2 pooledDfix=0.0005 W0=10.4785

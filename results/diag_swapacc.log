@@ -1,0 +1,10 @@
+IMG 000c1434d8d7.png true=Moderate size=[224 224 3]
+  V1: Moderate(2) conf=97.1 margin=94.7
+  R50-via-screen: No_DR(0) conf=69.3 margin=42.2 cal=46.6 merged=1
+  R50-native-predictor NOTE: Undefined function 'predictSingleImage' for input arguments of type 'char'.
+  ENH-DIFF meanabs=9.057/255 (0=identical)
+IMG 0024cdab0c1e.png true=Mild size=[224 224 3]
+  V1: Mild(1) conf=93.8 margin=87.9
+  R50-via-screen: No_DR(0) conf=56.7 margin=16.0 cal=43.4 merged=1
+  R50-native-predictor NOTE: Undefined function 'predictSingleImage' for input arguments of type 'char'.
+  ENH-DIFF meanabs=8.860/255 (0=identical)

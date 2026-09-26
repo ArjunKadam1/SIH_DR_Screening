@@ -1,0 +1,55 @@
+P7-ATTRESIZE base=P3A-block2 loss=focal+dice5 budget=640 eval/ckpt every 40 rng=42 lr=1e-4 bs=4 clip=1.0
+RESUME-CHECK attInitP7 fpNorm=41.158690 layers=69
+TRIPWIRE probe0 vessel-P mean=0.32248 (expect ~half of P3-A state: fresh gates)
+GATE-REF median(iters1-10)=4.7631 trip-level=9.5263
+TRIPWIRE probe: iter0=0.32248 iter10=0.26639 -> false
+TRIPWIRE-FLAG: collapsing.
+P7 iter=40/640 loss=4.2707 (focal=0.098 di=0.835) nPre=2.7152e+00 clip=1 elapsed=0.1min
+[P7 block1] eval 4 imgs: mean dFix=0.1288 dBest=0.1945 predFrac=0.0870
+P7 BLOCK 1 DONE pooled dFix=0.1288 dBest=0.1945 sweeps=10.0
+P7 iter=80/640 loss=4.2134 (focal=0.115 di=0.820) nPre=1.3842e+01 clip=1 elapsed=0.2min
+[P7 block2] eval 4 imgs: mean dFix=0.1036 dBest=0.2159 predFrac=0.0581
+P7 BLOCK 2 DONE pooled dFix=0.1036 dBest=0.2159 sweeps=20.0
+P7 iter=120/640 loss=4.1904 (focal=0.136 di=0.811) nPre=2.0285e+00 clip=1 elapsed=0.2min
+[P7 block3] eval 4 imgs: mean dFix=0.1013 dBest=0.2174 predFrac=0.0617
+P7 BLOCK 3 DONE pooled dFix=0.1013 dBest=0.2174 sweeps=30.0
+P7 iter=160/640 loss=4.1046 (focal=0.130 di=0.795) nPre=3.9605e+00 clip=1 elapsed=0.3min
+[P7 block4] eval 4 imgs: mean dFix=0.0886 dBest=0.2177 predFrac=0.0505
+P7 BLOCK 4 DONE pooled dFix=0.0886 dBest=0.2177 sweeps=40.0
+P7 iter=200/640 loss=4.2103 (focal=0.128 di=0.816) nPre=6.6234e+01 clip=1 elapsed=0.4min
+[P7 block5] eval 4 imgs: mean dFix=0.0732 dBest=0.2173 predFrac=0.0389
+P7 BLOCK 5 DONE pooled dFix=0.0732 dBest=0.2173 sweeps=50.0
+P7 iter=240/640 loss=4.0368 (focal=0.132 di=0.781) nPre=6.6070e+00 clip=1 elapsed=0.5min
+[P7 block6] eval 4 imgs: mean dFix=0.0582 dBest=0.2166 predFrac=0.0284
+P7 BLOCK 6 DONE pooled dFix=0.0582 dBest=0.2166 sweeps=60.0
+P7 iter=280/640 loss=4.0610 (focal=0.132 di=0.786) nPre=1.0610e+01 clip=1 elapsed=0.5min
+[P7 block7] eval 4 imgs: mean dFix=0.0383 dBest=0.2150 predFrac=0.0159
+P7 BLOCK 7 DONE pooled dFix=0.0383 dBest=0.2150 sweeps=70.0
+P7 iter=320/640 loss=4.0824 (focal=0.127 di=0.791) nPre=9.7419e-01 clip=0 elapsed=0.6min
+[P7 block8] eval 4 imgs: mean dFix=0.0239 dBest=0.2119 predFrac=0.0088
+P7 BLOCK 8 DONE pooled dFix=0.0239 dBest=0.2119 sweeps=80.0
+P7 iter=360/640 loss=4.1207 (focal=0.131 di=0.798) nPre=4.5739e+00 clip=1 elapsed=0.7min
+[P7 block9] eval 4 imgs: mean dFix=0.0179 dBest=0.1962 predFrac=0.0063
+P7 BLOCK 9 DONE pooled dFix=0.0179 dBest=0.1962 sweeps=90.0
+P7 iter=400/640 loss=4.2211 (focal=0.140 di=0.816) nPre=1.9385e+01 clip=1 elapsed=0.7min
+[P7 block10] eval 4 imgs: mean dFix=0.0075 dBest=0.1571 predFrac=0.0025
+P7 BLOCK 10 DONE pooled dFix=0.0075 dBest=0.1571 sweeps=100.0
+P7 iter=440/640 loss=4.1779 (focal=0.123 di=0.811) nPre=2.2821e+00 clip=1 elapsed=0.8min
+[P7 block11] eval 4 imgs: mean dFix=0.0055 dBest=0.1422 predFrac=0.0020
+P7 BLOCK 11 DONE pooled dFix=0.0055 dBest=0.1422 sweeps=110.0
+P7 iter=480/640 loss=4.1947 (focal=0.130 di=0.813) nPre=9.7025e+00 clip=1 elapsed=0.9min
+[P7 block12] eval 4 imgs: mean dFix=0.0035 dBest=0.1185 predFrac=0.0013
+P7 BLOCK 12 DONE pooled dFix=0.0035 dBest=0.1185 sweeps=120.0
+P7 iter=520/640 loss=4.2261 (focal=0.131 di=0.819) nPre=1.9014e+00 clip=1 elapsed=1.0min
+[P7 block13] eval 4 imgs: mean dFix=0.0024 dBest=0.1059 predFrac=0.0010
+P7 BLOCK 13 DONE pooled dFix=0.0024 dBest=0.1059 sweeps=130.0
+P7 iter=560/640 loss=4.1611 (focal=0.127 di=0.807) nPre=8.4112e-01 clip=0 elapsed=1.0min
+[P7 block14] eval 4 imgs: mean dFix=0.0014 dBest=0.0836 predFrac=0.0007
+P7 BLOCK 14 DONE pooled dFix=0.0014 dBest=0.0836 sweeps=140.0
+P7 iter=600/640 loss=4.1941 (focal=0.126 di=0.814) nPre=1.0854e+00 clip=1 elapsed=1.1min
+[P7 block15] eval 4 imgs: mean dFix=0.0008 dBest=0.0720 predFrac=0.0005
+P7 BLOCK 15 DONE pooled dFix=0.0008 dBest=0.0720 sweeps=150.0
+P7 iter=640/640 loss=4.1917 (focal=0.122 di=0.814) nPre=8.6890e-01 clip=0 elapsed=1.2min
+[P7 block16] eval 4 imgs: mean dFix=0.0003 dBest=0.0583 predFrac=0.0003
+P7 BLOCK 16 DONE pooled dFix=0.0003 dBest=0.0583 sweeps=160.0
+P7 DONE bestBlock=1 pooledDfix=0.1288 (P3-A control 0.3735, P6-native 0.045)

@@ -1,0 +1,65 @@
+ARM-A-EXT epochs 11-20 from armA_epoch10.mat, frozen settings identical
+RESUME-CHECK ep10 fpNorm=39.260789 layers=48
+RNG replayed seed=42, skipped 10 epoch orders; ep11 continues sequence
+OPT lr=1e-4 bs=4 clip=1.0 gpu=1 adamStep resumes at 40, moments fresh
+ARM-A iter=41/80 ep=11 loss=13.5360 nPre=0.001 clip=0 elapsed=0.0min
+ARM-A iter=42/80 ep=11 loss=13.5678 nPre=0.001 clip=0 elapsed=0.0min
+ARM-A iter=43/80 ep=11 loss=13.5522 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=44/80 ep=11 loss=13.7915 nPre=0.001 clip=0 elapsed=0.1min
+[ARM-A ep11] eval 4 imgs: mean dFix=0.3658 dBest=0.3758 predFrac=0.1761
+ARM-A EPOCH 11 DONE pooled dFix=0.3658 dBest=0.3758
+ARM-A iter=45/80 ep=12 loss=13.4892 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=46/80 ep=12 loss=13.6005 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=47/80 ep=12 loss=13.7977 nPre=0.000 clip=0 elapsed=0.1min
+ARM-A iter=48/80 ep=12 loss=13.5601 nPre=0.001 clip=0 elapsed=0.1min
+[ARM-A ep12] eval 4 imgs: mean dFix=0.3643 dBest=0.3742 predFrac=0.1798
+ARM-A EPOCH 12 DONE pooled dFix=0.3643 dBest=0.3742
+ARM-A iter=49/80 ep=13 loss=13.6972 nPre=0.003 clip=0 elapsed=0.1min
+ARM-A iter=50/80 ep=13 loss=13.5914 nPre=0.000 clip=0 elapsed=0.1min
+ARM-A iter=51/80 ep=13 loss=13.4759 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=52/80 ep=13 loss=13.6831 nPre=0.001 clip=0 elapsed=0.1min
+[ARM-A ep13] eval 4 imgs: mean dFix=0.3715 dBest=0.3799 predFrac=0.1560
+ARM-A EPOCH 13 DONE pooled dFix=0.3715 dBest=0.3799
+ARM-A iter=53/80 ep=14 loss=13.6599 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=54/80 ep=14 loss=13.5782 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=55/80 ep=14 loss=13.6514 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=56/80 ep=14 loss=13.5580 nPre=0.000 clip=0 elapsed=0.1min
+[ARM-A ep14] eval 4 imgs: mean dFix=0.3658 dBest=0.3762 predFrac=0.1511
+ARM-A EPOCH 14 DONE pooled dFix=0.3658 dBest=0.3762
+ARM-A iter=57/80 ep=15 loss=13.5744 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=58/80 ep=15 loss=13.6060 nPre=0.001 clip=0 elapsed=0.1min
+ARM-A iter=59/80 ep=15 loss=13.6032 nPre=0.000 clip=0 elapsed=0.1min
+ARM-A iter=60/80 ep=15 loss=13.6639 nPre=0.000 clip=0 elapsed=0.1min
+[ARM-A ep15] eval 4 imgs: mean dFix=0.3603 dBest=0.3744 predFrac=0.1459
+ARM-A EPOCH 15 DONE pooled dFix=0.3603 dBest=0.3744
+ARM-A iter=61/80 ep=16 loss=13.6340 nPre=0.000 clip=0 elapsed=0.1min
+ARM-A iter=62/80 ep=16 loss=13.4511 nPre=0.000 clip=0 elapsed=0.1min
+ARM-A iter=63/80 ep=16 loss=13.7472 nPre=0.000 clip=0 elapsed=0.1min
+ARM-A iter=64/80 ep=16 loss=13.6151 nPre=0.322 clip=0 elapsed=0.1min
+[ARM-A ep16] eval 4 imgs: mean dFix=0.3506 dBest=0.3663 predFrac=0.1470
+ARM-A EPOCH 16 DONE pooled dFix=0.3506 dBest=0.3663
+ARM-A iter=65/80 ep=17 loss=13.4307 nPre=65.646 clip=1 elapsed=0.1min
+ARM-A iter=66/80 ep=17 loss=12.9194 nPre=325.852 clip=1 elapsed=0.1min
+ARM-A iter=67/80 ep=17 loss=11.2377 nPre=716.741 clip=1 elapsed=0.1min
+ARM-A iter=68/80 ep=17 loss=8.5055 nPre=613.481 clip=1 elapsed=0.1min
+[ARM-A ep17] eval 4 imgs: mean dFix=0.1981 dBest=0.2203 predFrac=0.3405
+ARM-A EPOCH 17 DONE pooled dFix=0.1981 dBest=0.2203
+ARM-A iter=69/80 ep=18 loss=7.9502 nPre=206.913 clip=1 elapsed=0.1min
+ARM-A iter=70/80 ep=18 loss=8.2737 nPre=596.705 clip=1 elapsed=0.1min
+ARM-A iter=71/80 ep=18 loss=9.2443 nPre=947.067 clip=1 elapsed=0.1min
+ARM-A iter=72/80 ep=18 loss=9.4944 nPre=1075.426 clip=1 elapsed=0.1min
+[ARM-A ep18] eval 4 imgs: mean dFix=0.1575 dBest=0.1860 predFrac=0.4171
+ARM-A EPOCH 18 DONE pooled dFix=0.1575 dBest=0.1860
+ARM-A iter=73/80 ep=19 loss=8.8202 nPre=1189.665 clip=1 elapsed=0.1min
+ARM-A iter=74/80 ep=19 loss=7.3024 nPre=1139.538 clip=1 elapsed=0.1min
+ARM-A iter=75/80 ep=19 loss=5.6660 nPre=267.373 clip=1 elapsed=0.1min
+ARM-A iter=76/80 ep=19 loss=6.3848 nPre=1163.673 clip=1 elapsed=0.1min
+[ARM-A ep19] eval 4 imgs: mean dFix=0.2665 dBest=0.2714 predFrac=0.1815
+ARM-A EPOCH 19 DONE pooled dFix=0.2665 dBest=0.2714
+ARM-A iter=77/80 ep=20 loss=7.8858 nPre=1528.594 clip=1 elapsed=0.1min
+ARM-A iter=78/80 ep=20 loss=8.5427 nPre=1528.367 clip=1 elapsed=0.1min
+ARM-A iter=79/80 ep=20 loss=8.3549 nPre=1579.403 clip=1 elapsed=0.1min
+ARM-A iter=80/80 ep=20 loss=7.1936 nPre=1522.597 clip=1 elapsed=0.1min
+[ARM-A ep20] eval 4 imgs: mean dFix=0.2216 dBest=0.2269 predFrac=0.2044
+ARM-A EPOCH 20 DONE pooled dFix=0.2216 dBest=0.2269
+ARM-A-EXT DONE bestEp(11-20)=13 pooledDfix=0.3715

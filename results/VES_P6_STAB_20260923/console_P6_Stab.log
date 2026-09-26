@@ -1,0 +1,39 @@
+P6-STAB resume=block11 LR=3e-5 budget=120 eval/ckpt every 40 (3 stab blocks) rng=42 bs=4 clip=1.0
+SPOT-CHECK Encoder-Stage-1-Conv-1/Weights maxabsdiff=0.00963
+SPOT-CHECK Decoder-Stage-2-Conv-2/Bias maxabsdiff=0.006
+SPOT-CHECK encoderDecoderFinalConvLayer/Weights maxabsdiff=0.0182
+{Error using assert
+Warm-start copy corrupted — STOP.
+
+Error in trainVesselP6_Stab (line 37)
+assert(spot == 0, 'Warm-start copy corrupted — STOP.');
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+P6-STAB resume=block11 LR=3e-5 budget=120 eval/ckpt every 40 (3 stab blocks) rng=42 bs=4 clip=1.0
+DRIFT-CHECK Encoder-Stage-1-Conv-1/Weights maxabsdiff=0.00963
+DRIFT-CHECK Decoder-Stage-2-Conv-2/Bias maxabsdiff=0.006
+DRIFT-CHECK encoderDecoderFinalConvLayer/Weights maxabsdiff=0.0182
+DRIFT-CHECK AG2_Wx/Weights: gate tensor, no plain counterpart (presence ok)
+DRIFT-CHECK ok: resume net trained away from plain as expected.
+RESUME-CHECK attNet fpNorm=41.187098 layers=69 (expect ~41.16 / 69)
+PATCH-AUDIT total=256 kept(fov>=0.10)=256 vfrac med=0.1080 max=0.2382
+TRIPWIRE probe0 vessel-P mean=0.38920 (fixed patches 1-4)
+GATE-REF median(iters1-10)=4.3068 trip-level=8.6136
+TRIPWIRE probe vessel-P mean: iter0=0.38920 iter10=0.36392 -> false
+TRIPWIRE-FLAG: predictions collapsing toward zero.
+P6-STAB iter=20/120 loss=4.5301 (focal=0.118 di=0.882) nPre=2.8654e+00 clip=1 elapsed=0.1min
+P6-STAB iter=40/120 loss=4.3041 (focal=0.110 di=0.839) nPre=1.1505e+00 clip=1 elapsed=0.1min
+[P6-STAB block1] eval 4 imgs: mean dFix=0.0000 dBest=0.1755 predFrac=0.0001
+P6-STAB BLOCK 1 DONE pooled dFix=0.0000 dBest=0.1755 sweeps=0.62
+P6-STAB iter=60/120 loss=4.2240 (focal=0.129 di=0.819) nPre=6.0264e-01 clip=0 elapsed=0.1min
+P6-STAB iter=80/120 loss=4.1936 (focal=0.111 di=0.816) nPre=1.8845e+00 clip=1 elapsed=0.1min
+[P6-STAB block2] eval 4 imgs: mean dFix=0.0000 dBest=0.1738 predFrac=0.0000
+P6-STAB BLOCK 2 DONE pooled dFix=0.0000 dBest=0.1738 sweeps=1.25
+P6-STAB iter=100/120 loss=4.2271 (focal=0.117 di=0.822) nPre=3.3441e-01 clip=0 elapsed=0.2min
+P6-STAB iter=120/120 loss=4.1553 (focal=0.116 di=0.808) nPre=2.9731e+00 clip=1 elapsed=0.2min
+[P6-STAB block3] eval 4 imgs: mean dFix=0.0001 dBest=0.1754 predFrac=0.0000
+P6-STAB BLOCK 3 DONE pooled dFix=0.0001 dBest=0.1754 sweeps=1.88
+P6-STAB DONE bestBlock=3 pooledDfix=0.0001

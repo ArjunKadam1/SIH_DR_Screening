@@ -1,0 +1,19 @@
+SYNTH peak=(165,357) expected=(166,357) err=1.0px (bar <=10)
+SELECT 1da4a17c18c9.png q=ACCEPT refer=0 esc=0 cls=Mild rel=low
+SELECT 000c1434d8d7.png q=ACCEPT refer=1 esc=0 cls=Moderate rel=low
+SELECT 001639a390f0.png q=ACCEPT refer=0 esc=0 cls=No_DR rel=borderline
+SELECT 0024cdab0c1e.png q=ACCEPT refer=1 esc=0 cls=Moderate rel=low
+SELECT 002c21358ce6.png q=ACCEPT refer=0 esc=0 cls=No_DR rel=high
+SELECT 005b95c28852.png q=BORDERLINE refer=1 esc=1 cls=No_DR rel=low
+SELECT 0083ee8054ee.png q=ACCEPT refer=0 esc=0 cls=No_DR rel=low
+SELECT 0097f532ac9f.png q=BORDERLINE refer=0 esc=0 cls=Mild rel=borderline
+SELECT 00a8624548a9.png q=ACCEPT refer=1 esc=0 cls=Moderate rel=borderline
+SELECT 00b74780d31d.png q=BORDERLINE refer=1 esc=0 cls=Moderate rel=low
+BANK images: 1da4a17c18c9.png, 000c1434d8d7.png, 1da4a17c18c9.png, 005b95c28852.png, 1da4a17c18c9.png
+BANK 1 1da4a17c18c9.png shift=0.0px dec=Mild cardRefer=0 consistent=1 rawMax=4.646 feat=res5b_relu loser=0
+BANK 2 000c1434d8d7.png shift=0.0px dec=Moderate cardRefer=1 consistent=1 rawMax=1.798 feat=res5b_relu loser=0
+BANK 3 1da4a17c18c9.png shift=0.0px dec=Mild cardRefer=0 consistent=1 rawMax=4.646 feat=res5b_relu loser=0
+BANK 4 005b95c28852.png shift=298.6px dec=Moderate cardRefer=1 consistent=1 rawMax=2.307 feat=res5b_relu loser=1
+BANK 5 1da4a17c18c9.png shift=0.0px dec=Mild cardRefer=0 consistent=1 rawMax=4.646 feat=res5b_relu loser=0
+SYNTH warp-exactness pass=1 (err 1.0px)
+REJECT-PROBE class=Proliferate_DR performed=1 (want REJECTED/false, no crash)

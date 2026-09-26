@@ -1,0 +1,7 @@
+file,grade,ref,conf,rawmax,flat,maCount,maTime,vesFrac,vesThr,vesTime,fovMask
+n_images\000c1434d8d7.png,Moderate,1,99.84,4.934,0,21,3.8,8.98,0.415,0.4,0
+Training Set\IDRiD_54.jpg,Moderate,1,73.31,4.986,0,95,3.0,8.99,0.605,0.2,0
+n_images\12e6e66c80a7.png,Moderate,1,99.25,4.283,0,6,0.1,7.62,0.629,0.0,0
+n_images\4ef0b485a7da.png,Moderate,1,98.22,3.195,0,4,0.3,8.27,0.695,0.0,0
+n_images\df8365d6ac33.png,Moderate,1,98.50,0.506,0,24,1.6,8.97,0.582,0.2,0
+ng\images\37_training.tif,No_DR,0,100.00,0.735,0,2,0.1,7.06,0.944,0.0,1

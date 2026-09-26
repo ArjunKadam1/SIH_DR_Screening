@@ -1,0 +1,21 @@
+{Error using trainnet (line 15)
+Error evaluating loss function.
+
+Error in probeTrainnetCall_TrackB_20260918 (line 12)
+net = trainnet(cds, dlnet, @probeLoss_TrackB_20260918, opts);
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Caused by:
+    Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('probeLoss_TrackB_20260918', 'C:\Users\SHIVANYA
+    SALES\Desktop\DR tejas\SIH_DR_Screening\segmentation\microaneurysms\probeLoss_TrackB_20260918.m', 15)"
+    style="font-weight:bold">probeLoss_TrackB_20260918</a> (<a href="matlab: opentoline('C:\Users\SHIVANYA SALES\Desktop\DR
+    tejas\SIH_DR_Screening\segmentation\microaneurysms\probeLoss_TrackB_20260918.m',15,0)">line 15</a>)
+    PROBE_DONE_STOP
+
+    Error in <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('nnet.internal.cnn.util.UserCodeException.fevalUserCode',
+    'C:\Program Files\MATLAB\R2026a\toolbox\nnet\cnn\+nnet\+internal\+cnn\+util\+UserCodeException\fevalUserCode.m', 11)"
+    style="font-weight:bold">nnet.internal.cnn.util.UserCodeException.fevalUserCode</a> (<a href="matlab: opentoline('C:\Program
+    Files\MATLAB\R2026a\toolbox\nnet\cnn\+nnet\+internal\+cnn\+util\+UserCodeException\fevalUserCode.m',11,0)">line 11</a>)
+        [varargout{1:nargout}] = feval(F, varargin{:});
+                                 ^^^^^^^^^^^^^^^^^^^^^
+} 
+ERROR: MATLAB error Exit Status: 0x00000001

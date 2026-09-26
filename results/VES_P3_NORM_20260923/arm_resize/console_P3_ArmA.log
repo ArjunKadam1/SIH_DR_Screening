@@ -1,0 +1,21 @@
+P3-ARMA loss=norm budget=160 eval/ckpt every 40 rng=42 lr=1e-4 bs=4 clip=1.0
+RESUME-CHECK fpNorm=39.259579 ckSum=-1307.510348 (expect 39.259579 / -1307.510348)
+W0 FIXED=10.4785 from train vessel-frac mean=0.08712 (min=0.0605 med=0.0848 max=0.1160)
+GATE-REF median(iters1-10)=2.2046 trip-level=4.4092
+P3-ARMA iter=20/160 loss=2.1977 (ce=1.198 di=1.000 wV=9.92) nPre=6.8955e-03 clip=0 elapsed=0.1min
+P3-ARMA iter=40/160 loss=2.2005 (ce=1.201 di=1.000 wV=10.18) nPre=6.5383e-04 clip=0 elapsed=0.1min
+[P3-ARMA block1] eval 4 imgs: mean dFix=0.3729 dBest=0.3811 predFrac=0.1608
+P3-ARMA BLOCK 1 DONE pooled dFix=0.3729 dBest=0.3811 sweeps=10.0
+P3-ARMA iter=60/160 loss=2.2085 (ce=1.209 di=1.000 wV=11.00) nPre=6.5268e-04 clip=0 elapsed=0.1min
+P3-ARMA iter=80/160 loss=2.2110 (ce=1.211 di=1.000 wV=11.27) nPre=6.5502e-04 clip=0 elapsed=0.2min
+[P3-ARMA block2] eval 4 imgs: mean dFix=0.3735 dBest=0.3814 predFrac=0.1590
+P3-ARMA BLOCK 2 DONE pooled dFix=0.3735 dBest=0.3814 sweeps=20.0
+P3-ARMA iter=100/160 loss=2.2084 (ce=1.208 di=1.000 wV=10.98) nPre=6.5349e-04 clip=0 elapsed=0.2min
+P3-ARMA iter=120/160 loss=2.2037 (ce=1.204 di=1.000 wV=10.49) nPre=6.4344e-04 clip=0 elapsed=0.2min
+[P3-ARMA block3] eval 4 imgs: mean dFix=0.3716 dBest=0.3799 predFrac=0.1617
+P3-ARMA BLOCK 3 DONE pooled dFix=0.3716 dBest=0.3799 sweeps=30.0
+P3-ARMA iter=140/160 loss=2.2104 (ce=1.210 di=1.000 wV=11.20) nPre=6.2867e-04 clip=0 elapsed=0.2min
+P3-ARMA iter=160/160 loss=2.1938 (ce=1.194 di=1.000 wV=9.58) nPre=5.2761e-04 clip=0 elapsed=0.3min
+[P3-ARMA block4] eval 4 imgs: mean dFix=0.3699 dBest=0.3778 predFrac=0.1651
+P3-ARMA BLOCK 4 DONE pooled dFix=0.3699 dBest=0.3778 sweeps=40.0
+P3-ARMA DONE bestBlock=2 pooledDfix=0.3735 W0=10.4785

@@ -1,0 +1,43 @@
+P5-EXT 160->640 focal, blocks 5-16, same gates (refMed carried)
+RESUME block4 iter=160 refMed carried=6.3104 trip-level=12.6207
+RESUME-CHECK fpNorm=39.257479
+RNG replayed seed=42, discarded 3x randperm(256) (~640 prior takes)
+OPT adamStep resumes at 160, moments fresh (warm-restart)
+P5-EXT iter=200/640 loss=6.3161 (focal=1.406 di=0.982) nPre=1.3991e+01 clip=1 elapsed=0.1min
+[P5-EXT block5] eval 4 imgs: mean dFix=0.0002 dBest=0.0496 predFrac=0.0086
+P5-EXT BLOCK 5 DONE pooled dFix=0.0002 dBest=0.0496 sweeps=3.12
+P5-EXT iter=240/640 loss=6.4877 (focal=1.595 di=0.978) nPre=5.2296e+00 clip=1 elapsed=0.1min
+[P5-EXT block6] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0099
+P5-EXT BLOCK 6 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=3.75
+P5-EXT iter=280/640 loss=6.3517 (focal=1.538 di=0.963) nPre=4.8351e+00 clip=1 elapsed=0.2min
+[P5-EXT block7] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P5-EXT BLOCK 7 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=4.38
+P5-EXT iter=320/640 loss=6.6597 (focal=1.733 di=0.985) nPre=6.8317e+00 clip=1 elapsed=0.2min
+[P5-EXT block8] eval 4 imgs: mean dFix=0.0003 dBest=0.0496 predFrac=0.0070
+P5-EXT BLOCK 8 DONE pooled dFix=0.0003 dBest=0.0496 sweeps=5.00
+P5-EXT iter=360/640 loss=6.0329 (focal=1.217 di=0.963) nPre=5.6725e+00 clip=1 elapsed=0.2min
+[P5-EXT block9] eval 4 imgs: mean dFix=0.0003 dBest=0.0496 predFrac=0.0103
+P5-EXT BLOCK 9 DONE pooled dFix=0.0003 dBest=0.0496 sweeps=5.62
+P5-EXT iter=400/640 loss=5.9330 (focal=1.031 di=0.981) nPre=1.2919e+01 clip=1 elapsed=0.3min
+[P5-EXT block10] eval 4 imgs: mean dFix=0.0003 dBest=0.0496 predFrac=0.0086
+P5-EXT BLOCK 10 DONE pooled dFix=0.0003 dBest=0.0496 sweeps=6.25
+P5-EXT iter=440/640 loss=6.1897 (focal=1.317 di=0.974) nPre=8.4200e+00 clip=1 elapsed=0.3min
+[P5-EXT block11] eval 4 imgs: mean dFix=0.0002 dBest=0.0496 predFrac=0.0088
+P5-EXT BLOCK 11 DONE pooled dFix=0.0002 dBest=0.0496 sweeps=6.88
+P5-EXT iter=480/640 loss=6.1487 (focal=1.280 di=0.974) nPre=9.1043e+00 clip=1 elapsed=0.4min
+[P5-EXT block12] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P5-EXT BLOCK 12 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=7.50
+P5-EXT iter=520/640 loss=6.9387 (focal=2.057 di=0.976) nPre=8.8409e+00 clip=1 elapsed=0.4min
+[P5-EXT block13] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P5-EXT BLOCK 13 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=8.12
+P5-EXT iter=560/640 loss=6.6390 (focal=1.763 di=0.975) nPre=2.3934e+00 clip=1 elapsed=0.4min
+[P5-EXT block14] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P5-EXT BLOCK 14 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=8.75
+P5-EXT iter=600/640 loss=6.3148 (focal=1.441 di=0.975) nPre=9.5512e+00 clip=1 elapsed=0.5min
+[P5-EXT block15] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P5-EXT BLOCK 15 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=9.38
+P5-EXT iter=640/640 loss=6.2116 (focal=1.353 di=0.972) nPre=5.7892e+00 clip=1 elapsed=0.5min
+[P5-EXT block16] eval 4 imgs: mean dFix=0.0004 dBest=0.0544 predFrac=0.0115
+P5-EXT BLOCK 16 DONE pooled dFix=0.0004 dBest=0.0544 sweeps=10.00
+P5-EXT DONE bestBlock(5-16)=12 pooledDfix=0.0004
+TRIPWIRE-CLOSE probe: iter0=0.00309 iter10=0.00937 iter640=0.01993

@@ -1,0 +1,8 @@
+P6-TEST net=attB_block12 (dFix 0.045 pooled val) gpu=1
+TEST 01 size=584x565 vessel%=2.94 (train-GT range 7.5-8.7) inFOV=0.654 tiles=16
+TEST 02 size=584x565 vessel%=2.90 (train-GT range 7.5-8.7) inFOV=0.661 tiles=16
+VAL id dFix dBest predFrac gtFrac thinRecall
+VAL 37 0.0420 0.1793 0.0309 0.0874 0.2261
+VAL 38 0.0376 0.1748 0.0299 0.0863 0.2031
+VAL 39 0.0516 0.1785 0.0309 0.0859 0.2341
+VAL 40 0.0424 0.1536 0.0298 0.0758 0.2130

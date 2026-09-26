@@ -1,0 +1,23 @@
+P5-ARMB loss=focal budget=160 eval/ckpt every 40 stride=128 rng=42 lr=1e-4 bs=4 clip=1.0
+RESUME-CHECK fpNorm=39.259579 ckSum=-1307.510348 (expect 39.259579 / -1307.510348)
+PATCH-AUDIT total=256 kept(fov>=0.10)=256 vfrac med=0.1080 max=0.2382
+TRIPWIRE probe0 vessel-P mean=0.00309 (fixed patches 1-4)
+GATE-REF median(iters1-10)=6.3104 trip-level=12.6207
+TRIPWIRE probe vessel-P mean: iter0=0.00309 iter10=0.00937 -> true
+P5-ARMB iter=20/160 loss=5.8778 (focal=0.947 di=0.986) nPre=3.9219e+00 clip=1 elapsed=0.0min
+P5-ARMB iter=40/160 loss=6.2768 (focal=1.406 di=0.974) nPre=2.0672e+01 clip=1 elapsed=0.1min
+[P5-ARMB block1] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0091
+P5-ARMB BLOCK 1 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=0.62
+P5-ARMB iter=60/160 loss=6.4715 (focal=1.600 di=0.974) nPre=1.4874e+01 clip=1 elapsed=0.1min
+P5-ARMB iter=80/160 loss=6.4721 (focal=1.620 di=0.970) nPre=5.9825e+00 clip=1 elapsed=0.1min
+[P5-ARMB block2] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0103
+P5-ARMB BLOCK 2 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=1.25
+P5-ARMB iter=100/160 loss=6.4019 (focal=1.532 di=0.974) nPre=1.3853e+01 clip=1 elapsed=0.1min
+P5-ARMB iter=120/160 loss=6.5942 (focal=1.746 di=0.970) nPre=1.5327e+01 clip=1 elapsed=0.1min
+[P5-ARMB block3] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P5-ARMB BLOCK 3 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=1.88
+P5-ARMB iter=140/160 loss=6.8499 (focal=2.016 di=0.967) nPre=9.5430e+00 clip=1 elapsed=0.2min
+P5-ARMB iter=160/160 loss=6.6285 (focal=1.730 di=0.980) nPre=1.3088e+01 clip=1 elapsed=0.2min
+[P5-ARMB block4] eval 4 imgs: mean dFix=0.0004 dBest=0.0496 predFrac=0.0104
+P5-ARMB BLOCK 4 DONE pooled dFix=0.0004 dBest=0.0496 sweeps=2.50
+P5-ARMB DONE bestBlock=3 pooledDfix=0.0004

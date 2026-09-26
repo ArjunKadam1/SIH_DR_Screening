@@ -1,0 +1,2 @@
+X [256 256 3 4] | T [256 256 2 4]
+LOSS_OK value=1.1741 lossClass=dlarray

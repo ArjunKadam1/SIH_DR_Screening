@@ -1,0 +1,39 @@
+{Error using nnet.cnn.LayerGraph/connectLayers (line 166)
+Unable to connect to 'AG1_Wg'. This input is already connected.
+
+Error in buildVesselAttention (line 47)
+    lg = connectLayers(lg, gateL, [p '_Wg']);
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in run (line 100)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+GATE AG1: skip=encoderDecoderSkipConnectionCrop3(64ch) gating=Decoder-Stage-1-UpReLU(64ch) Fint=32
+GATE AG2: skip=encoderDecoderSkipConnectionCrop2(32ch) gating=Decoder-Stage-2-UpReLU(32ch) Fint=16
+GATE AG3: skip=encoderDecoderSkipConnectionCrop1(16ch) gating=Decoder-Stage-3-UpReLU(16ch) Fint=8
+ASSEMBLED layers=69 (plain 48 + 21 gate layers)
+MAP copied-tensors=36 new-tensors=18 new-params=5547/487597 (1.14%)
+MAP new list:
+  AG1_Wx/Weights
+  AG1_Wx/Bias
+  AG1_Wg/Weights
+  AG1_Wg/Bias
+  AG1_Psi/Weights
+  AG1_Psi/Bias
+  AG2_Wx/Weights
+  AG2_Wx/Bias
+  AG2_Wg/Weights
+  AG2_Wg/Bias
+  AG2_Psi/Weights
+  AG2_Psi/Bias
+  AG3_Wx/Weights
+  AG3_Wx/Bias
+  AG3_Wg/Weights
+  AG3_Wg/Bias
+  AG3_Psi/Weights
+  AG3_Psi/Bias
+INIT fpNorm=41.157248
+D1 forward size=[256 256 2 4] (expect [256 256 2 4])
+D1 loss=5.3239 (focal=1.221 di=0.821)
+D1 grads finite=1 AG-tensors-with-grad=18/18 nonzero=18
+D1 PASS — attention net built, warm-started, gradients reach all gates.

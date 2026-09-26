@@ -10,8 +10,8 @@ new_system(model); open_system(model);
 arrivalPerHour = 20; aiSecPerImage = 2.5; reviewMinPerReferable = 5; referableRate = 0.35;
 % Use SimEvents-free discrete model: Constant arrivals, delays, scope
 add_block('simulink/Sources/Constant',[model '/ArrivalRate'], 'Value', num2str(arrivalPerHour));
-add_block('simulink/Continuous/Transport Delay',[model '/AI_Processing'], 'TimeDelay', num2str(aiSecPerImage));
-add_block('simulink/Continuous/Transport Delay',[model '/Review_Queue'], 'TimeDelay', num2str(reviewMinPerReferable*60*referableRate));
+add_block('simulink/Continuous/Transport Delay',[model '/AI_Processing'], 'DelayTime', num2str(aiSecPerImage));
+add_block('simulink/Continuous/Transport Delay',[model '/Review_Queue'], 'DelayTime', num2str(reviewMinPerReferable*60*referableRate));
 add_block('simulink/Sinks/Scope',[model '/BacklogScope']);
 add_block('simulink/Sinks/Display',[model '/ThroughputDisplay']);
 add_line(model,'ArrivalRate/1','AI_Processing/1');

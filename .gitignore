@@ -17,7 +17,15 @@ reports/smoke_test_*.csv
 # MATLAB / OS junk
 *.asv
 *.m~
+*.slxc
 __pycache__/
 *.pyc
 .MATLABDriveTag
 Thumbs.db
+
+# Local safety backups (never pushed; see checkpoint manifest pattern)
+checkpoint_*/
+
+# Generated / bulky inputs (rebuilt locally, never pushed)
+slprj/
+segmentation/microaneurysms/patches/

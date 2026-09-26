@@ -107,7 +107,7 @@ try
 
     % --- Disclaimer ---
     add(rpt, Paragraph(''));
-    add(rpt, Paragraph('Model V1: test acc 78.83%, referable sens 84.75% spec 97.54%. Prototype public-test, NOT clinical validation. Overfit noted: train 96.88% vs val 76.55%.'));
+    add(rpt, Paragraph('Model R50 aptosidrid4: APTOS-test acc 82.30%, referable sens 91.93% spec 95.08%. Prototype public-test, NOT clinical validation.'));
     add(rpt, Paragraph('AI-assisted screening prototype. Clinical confirmation is recommended before any clinical decision.'));
 
     close(rpt);
@@ -253,7 +253,7 @@ L{end+1} = '';
 % Disclaimer
 L{end+1} = 'Note: AI-assisted screening prototype.';
 L{end+1} = 'Clinical confirmation is recommended before any clinical decision.';
-L{end+1} = 'Model V1: test acc 78.83%, referable sens 84.75% spec 97.54%.';
+L{end+1} = 'Model R50 aptosidrid4: APTOS-test acc 82.30%, referable sens 91.93% spec 95.08%.';
 L{end+1} = 'Prototype public-test, NOT clinical validation.';
 L{end+1} = sep;
 

@@ -25,15 +25,18 @@ addpath(fullfile(projectRoot,'quality'));
 addpath(fullfile(projectRoot,'demo'));
 addpath(fullfile(projectRoot,'classification'));
 
+% Phase-2 swap (2026-09-25): smoke exercises the live R50 4-class grader.
+% Severe + Proliferate_DR folders both map to merged truth grade 3.
+% ROLLBACK: restore 5-class list/grades + trained_resnet18.mat load.
 classes = ["No_DR","Mild","Moderate","Severe","Proliferate_DR"];
-trueGrades = [0 1 2 3 4];
+trueGrades = [0 1 2 3 3];
 
 fprintf('========================================\n');
 fprintf('   DR Screening - Smoke Test (%d images)\n', nPerClass*numel(classes));
 fprintf('========================================\n');
 
-S = load(fullfile(projectRoot,'results','trained_resnet18.mat'),'trainedNet');
-trainedNet = S.trainedNet;
+S = load('C:/Users/SHIVANYA SALES/Desktop/DR tejas/HandheldDR/results/handheld_resnet50_aptosidrid4.mat','trainedNetHandheld');
+trainedNet = S.trainedNetHandheld;
 fprintf('Model loaded successfully.\n');
 
 results = struct('file',{},'trueLabel',{},'trueGrade',{},'qualityStatus',{}, ...

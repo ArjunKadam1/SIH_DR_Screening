@@ -24,8 +24,11 @@ for k = 1:2:numel(varargin)
         soOn = varargin{k+1};
     end
 end
-S = load(fullfile(projectRoot,'results','trained_resnet18.mat'),'trainedNet');
-trainedNet = S.trainedNet;
+% Phase-2 swap (2026-09-25): handheld R50 aptosidrid4 is the live grader.
+% ROLLBACK: restore the two lines loading results/trained_resnet18.mat
+% 'trainedNet' (V1 file kept on disk, untouched).
+S = load('C:/Users/SHIVANYA SALES/Desktop/DR tejas/HandheldDR/results/handheld_resnet50_aptosidrid4.mat','trainedNetHandheld');
+trainedNet = S.trainedNetHandheld;
 fprintf('========================================\n');
 fprintf('   Diabetic Retinopathy Screening Demo\n');
 fprintf('========================================\n\n');

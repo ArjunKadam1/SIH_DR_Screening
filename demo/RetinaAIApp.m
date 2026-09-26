@@ -53,9 +53,11 @@ methods (Access = public)
         app.buildUI();
         app.setStatus([0.2 0.7 0.2], 'Loading model…');
         drawnow;
-        S = load(fullfile(app.ProjectRoot,'results','trained_resnet18.mat'), ...
-            'trainedNet');
-        app.TrainedNet = S.trainedNet;
+        % Phase-2 swap (2026-09-25): handheld R50 aptosidrid4 live.
+        % ROLLBACK: restore results/trained_resnet18.mat 'trainedNet' (kept).
+        S = load('C:/Users/SHIVANYA SALES/Desktop/DR tejas/HandheldDR/results/handheld_resnet50_aptosidrid4.mat', ...
+            'trainedNetHandheld');
+        app.TrainedNet = S.trainedNetHandheld;
         app.setStatus([0.2 0.7 0.2], 'System Ready');
     end
 
@@ -213,7 +215,7 @@ methods (Access = private)
         % ---------- Footer ----------
         ftr = uilabel(main, ...
             'Text',['Human-in-the-loop: final clinical decision by an ophthalmologist.  ' ...
-            'Model V1 test acc 78.83% · referable sens 84.75% / spec 97.54% · prototype, NOT clinically validated.'], ...
+            'Model R50 aptosidrid4, APTOS-test acc 82.30% · referable sens 91.93% / spec 95.08% · prototype, NOT clinically validated.'], ...
             'FontSize',11,'FontColor',[0.35 0.35 0.35], ...
             'HorizontalAlignment','center');
     end
@@ -346,7 +348,11 @@ methods (Access = private)
         res = app.Result;
         app.RejectBanner.Text = '';
         app.ResultSeverity.Text = char(res.severity);
-        app.ResultGrade.Text = sprintf('%d / 4', res.ICDRGrade);
+        if isfield(res,'mergedGrade') && res.mergedGrade && res.ICDRGrade == 3
+            app.ResultGrade.Text = '3 (merged 3-4)';
+        else
+            app.ResultGrade.Text = sprintf('%d / 4', res.ICDRGrade);
+        end
         if res.referableDR
             app.ResultReferable.Text = 'YES';
             app.ResultReferable.FontColor = [0.75 0.1 0.1];
@@ -414,22 +420,40 @@ methods (Access = private)
                 imagesc(ax, m);
                 axis(ax,'image','off');
                 colormap(ax,'jet'); colorbar(ax);
-                title(ax,'Grad-CAM Attention','FontWeight','bold');
+                if isfield(res,'gradCAMRawMax')
+                    title(ax,sprintf('Grad-CAM Attention (rawmax %.3f)', ...
+                        double(res.gradCAMRawMax)),'FontWeight','bold');
+                else
+                    title(ax,'Grad-CAM Attention','FontWeight','bold');
+                end
             case "Overlay"
                 if ~res.gradCAMAvailable
                     imshow(app.OriginalImage,'Parent',ax);
                     title(ax,'Overlay unavailable','FontWeight','bold');
                     return;
                 end
+                % Honest rendering (2026-09-25): alpha cap + caption from
+                % result when present; geometry unchanged (map stretched onto
+                % the same image that was classified — exact inverse).
                 [H,W,~] = size(app.OriginalImage);
                 m = app.normMap(imresize(res.gradCAMMap,[H W]));
+                if isfield(res,'gradCAMAlphaCap')
+                    alphaCap = double(res.gradCAMAlphaCap);
+                else
+                    alphaCap = 0.45;   % back-compat: old result structs
+                end
                 imshow(app.OriginalImage,'Parent',ax);
                 hold(ax,'on');
                 h = imagesc(ax, m);
-                set(h,'AlphaData',0.45*m);
+                set(h,'AlphaData',alphaCap*m);
                 axis(ax,'image','off');
                 colormap(ax,'jet'); colorbar(ax);
-                title(ax,'Fundus + Grad-CAM Overlay','FontWeight','bold');
+                if isfield(res,'gradCAMCaption')
+                    title(ax,sprintf('Fundus + Grad-CAM Overlay\n%s', ...
+                        char(string(res.gradCAMCaption))),'FontWeight','bold');
+                else
+                    title(ax,'Fundus + Grad-CAM Overlay','FontWeight','bold');
+                end
                 hold(ax,'off');
         end
     end

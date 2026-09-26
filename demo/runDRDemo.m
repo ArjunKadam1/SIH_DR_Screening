@@ -12,9 +12,11 @@ addpath(fullfile(projectRoot, 'preprocessing'));
 addpath(fullfile(projectRoot, 'classification'));
 addpath(fullfile(projectRoot, 'gradcam'));
 
-%% Load Trained Model
-load(fullfile(projectRoot, ...
-    'results', 'trained_resnet18.mat'), 'trainedNet');
+%% Load Trained Model (Phase-2 swap 2026-09-25: handheld R50 live.
+%% ROLLBACK: restore results/trained_resnet18.mat 'trainedNet' below.)
+load('C:/Users/SHIVANYA SALES/Desktop/DR tejas/HandheldDR/results/handheld_resnet50_aptosidrid4.mat', ...
+    'trainedNetHandheld');
+trainedNet = trainedNetHandheld;
 
 fprintf('========================================\n');
 fprintf('   Diabetic Retinopathy Screening Demo\n');

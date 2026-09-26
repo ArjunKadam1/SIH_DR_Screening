@@ -44,21 +44,40 @@ imagesc(gradCAMFull);
 axis image off;
 colormap jet;
 colorbar;
-title('Grad-CAM Attention','FontWeight','bold');
+if isfield(result,'gradCAMRawMax')
+    title(sprintf('Grad-CAM Attention (rawmax %.3f)', ...
+        double(result.gradCAMRawMax)),'FontWeight','bold');
+else
+    title('Grad-CAM Attention','FontWeight','bold');
+end
 
 %% Actual retina + Grad-CAM
+% Honest rendering (2026-09-25): alpha cap + caption from result when present
+% (low reliability -> muted 0.25). Geometry intentionally unchanged: the map
+% is stretched onto the same image that was classified (exact inverse).
 subplot(2,2,4);
 imshow(originalImage);
 hold on;
 
+if isfield(result,'gradCAMAlphaCap')
+    alphaCap = double(result.gradCAMAlphaCap);
+else
+    alphaCap = 0.45;   % back-compat: old result structs
+end
 heatmapHandle = imagesc(gradCAMFull);
-set(heatmapHandle,'AlphaData',0.45 * gradCAMFull);
+set(heatmapHandle,'AlphaData',alphaCap * gradCAMFull);
 
 axis image off;
 colormap jet;
 colorbar;
 
-title('Fundus + Grad-CAM Overlay','FontWeight','bold');
+if isfield(result,'gradCAMCaption')
+    overlayTitle = sprintf('Fundus + Grad-CAM Overlay\n%s', ...
+        char(string(result.gradCAMCaption)));
+else
+    overlayTitle = 'Fundus + Grad-CAM Overlay';
+end
+title(overlayTitle,'FontWeight','bold');
 hold off;
 
 %% Overall title

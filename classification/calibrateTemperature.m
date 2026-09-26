@@ -59,7 +59,7 @@ end
 function [e, acc, conf] = ece(scores, Y)
 [~, pred] = max(scores,[],2);
 classes = categories(Y);
-predCat = categorical(classes(pred)', categories(Y));
+predCat = categorical(classes(pred), categories(Y));
 correct = predCat == Y;
 confAll = max(scores,[],2);
 acc = mean(correct); conf = mean(confAll);

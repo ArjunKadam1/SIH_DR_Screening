@@ -38,7 +38,7 @@ ver
 Confirm `Deep Learning Toolbox` and `Image Processing Toolbox` appear in the list.
 
 ## Quick start
-1. Download the 3 model files — see **[MODELS.md](MODELS.md)** (GitHub Release `v0.1-prototype`).
+1. Download the 4 model files — see **[MODELS.md](MODELS.md)** (GitHub Release `v0.1-prototype`).
 2. `addpath('demo'); app = RetinaAIApp_Lesion;` (previous `RetinaAIApp` kept as fallback).
 3. Upload a **raw** fundus photo → ANALYZE → Lesion tab → Report tab → Generate PDF.
 
@@ -47,7 +47,7 @@ Confirm `Deep Learning Toolbox` and `Image Processing Toolbox` appear in the lis
 - `classification/`, `preprocessing/`, `quality/` — grading, enhancement, quality gates.
 - `segmentation/microaneurysms/`, `segmentation/vessels/training_VES_P2B/` — MA + vessel training (frozen).
 - `simulink/` — DRISHTI workflow/telemedicine models (video: `DRISHTI_Integrated_Telemedicine_System.slx`) + Track B camp-capacity model.
-- `deploy/python_app/` — FastAPI scaffold (quality/demo-mode only, no ONNX yet).
+- `deploy/python_app/` — FastAPI service (quality + ONNX grading via `model/` drop-in).
 - `results/` — run evidence (CSVs/logs/overlays; `*.mat` weights excluded by design).
 - `reports/` — smoke CSVs, backlog traces, completion/deployment notes.
 

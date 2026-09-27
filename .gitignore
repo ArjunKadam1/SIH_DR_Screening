@@ -12,6 +12,7 @@ results/**/*.mat
 # Exported networks + local model drops (travel via GitHub Release)
 *.onnx
 deploy/python_app/model/
+models/
 
 # Generated outputs
 reports/screening_report_*.pdf

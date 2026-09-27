@@ -14,6 +14,9 @@ them at exactly these paths (filenames + variable names matter):
 
 Temperature file ships in-repo (tiny). The R50 net lives in the sibling
 `HandheldDR/` project; the Release bundles a copy for fresh clones.
+Local Drop-in: you may instead place `handheld_resnet50_aptosidrid4.mat` in an
+ignored top-level `models/` folder — `exportResNetToONNX.m` checks there first,
+then falls back to a file picker (no absolute paths).
 
 ## Run (MATLAB R2026a + Deep Learning + Image Processing toolboxes)
 ```

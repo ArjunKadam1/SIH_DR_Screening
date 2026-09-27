@@ -12,9 +12,9 @@ import os
 import numpy as np
 from PIL import Image, ImageOps
 
-CLASS_NAMES = ["Mild", "Moderate", "No_DR", "Proliferate_DR", "Severe"]
-CLASS_TO_GRADE = {"No_DR": 0, "Mild": 1, "Moderate": 2, "Severe": 3, "Proliferate_DR": 4}
-REFERABLE_CLASSES = {"Moderate", "Severe", "Proliferate_DR"}
+CLASS_NAMES = ["Mild", "Moderate", "No_DR", "SevereProlif"]
+CLASS_TO_GRADE = {"No_DR": 0, "Mild": 1, "Moderate": 2, "SevereProlif": 3}
+REFERABLE_CLASSES = {"Moderate", "SevereProlif"}
 
 # Honest prototype metrics from MATLAB Model V1
 MODEL_V1_METRICS = {
@@ -28,7 +28,7 @@ MODEL_V1_METRICS = {
     "disclaimer": "Prototype public-test results. NOT clinical validation.",
 }
 
-ONNX_PATH = os.environ.get("DR_ONNX_PATH", "model/resnet18_dr.onnx")
+ONNX_PATH = os.environ.get("DR_ONNX_PATH", "model/handheld_r50_aptosidrid4.onnx")
 
 
 def load_image(file_bytes: bytes) -> np.ndarray:
@@ -92,19 +92,23 @@ def enhance_image(img_rgb: np.ndarray) -> np.ndarray:
 
 
 def try_onnx_predict(img_rgb: np.ndarray):
-    """If DR_ONNX_PATH exists, run onnxruntime. Else return None (demo mode)."""
+    """If DR_ONNX_PATH exists, run onnxruntime. Else return None (demo mode).
+    Live model contract (proven vs MATLAB classify on identical pixels):
+    handheld R50, 4-class [Mild, Moderate, No_DR, SevereProlif], input
+    0-255 float32 NCHW (zerocenter is baked into the graph), outputs are
+    already probabilities (softmax baked in) — do NOT rescale or re-softmax.
+    """
     if not os.path.exists(ONNX_PATH):
         return None
     try:
         import onnxruntime as ort
         sess = ort.InferenceSession(ONNX_PATH, providers=["CPUExecutionProvider"])
         inp = Image.fromarray(img_rgb).resize((224, 224))
-        arr = np.array(inp).astype(np.float32) / 255.0
+        arr = np.array(inp).astype(np.float32)
         arr = arr.transpose(2, 0, 1)[None, :]
-        out = sess.run(None, {sess.get_inputs()[0].name: arr})[0][0]
-        # softmax
-        e = np.exp(out - out.max())
-        probs = e / e.sum()
+        out = np.array(sess.run(None, {sess.get_inputs()[0].name: arr})[0][0],
+                       dtype=np.float64)
+        probs = out / max(out.sum(), 1e-12)
         idx = int(np.argmax(probs))
         return CLASS_NAMES[idx], float(probs[idx]), [float(p) for p in probs]
     except Exception as e:
@@ -130,7 +134,7 @@ def screen_image(file_bytes: bytes) -> dict:
             "ICDRGrade": None,
             "referableDR": None,
             "mode": "DEMO-MODE-NO-ONNX",
-            "message": "No ONNX model found at model/resnet18_dr.onnx. Export MATLAB net via classification/exportResNetToONNX.m then set DR_ONNX_PATH.",
+            "message": "No ONNX model found at model/handheld_r50_aptosidrid4.onnx. Install the ONNX Converter add-on, export MATLAB net via classification/exportResNetToONNX.m then set DR_ONNX_PATH.",
             "modelV1Metrics": MODEL_V1_METRICS,
             "disclaimer": "AI-assisted screening prototype. Clinical confirmation required. Grad-CAM is attention, not lesion proof.",
         }

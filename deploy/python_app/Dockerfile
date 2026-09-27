@@ -3,7 +3,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY dr_pipeline.py app.py ./
-# Place exported ONNX at model/resnet18_dr.onnx (optional)
+# Place exported ONNX at model/handheld_r50_aptosidrid4.onnx (optional)
 RUN mkdir -p model
 EXPOSE 8000
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

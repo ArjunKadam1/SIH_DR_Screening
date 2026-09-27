@@ -27,7 +27,7 @@ def home():
     <input type="file" name="file" accept="image/*"><input type="submit" value="Screen">
     </form>
     <p>API: POST /screen with image file. GET /health, /metrics</p>
-    <p>To enable real grading: run MATLAB classification/exportResNetToONNX.m, place model at model/resnet18_dr.onnx</p>
+    <p>To enable real grading: install the ONNX Converter add-on in MATLAB, run MATLAB classification/exportResNetToONNX.m, place model at model/handheld_r50_aptosidrid4.onnx</p>
     </body></html>
     """
 

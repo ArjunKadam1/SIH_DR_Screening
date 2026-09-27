@@ -9,6 +9,10 @@ results/**/*.mat
 # ...except the tiny config checkpoints
 !results/V2_RetinaAIApp_checkpoint.mat
 
+# Exported networks + local model drops (travel via GitHub Release)
+*.onnx
+deploy/python_app/model/
+
 # Generated outputs
 reports/screening_report_*.pdf
 reports/screening_report_*.txt

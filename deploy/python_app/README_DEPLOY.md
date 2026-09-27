@@ -9,9 +9,13 @@ uvicorn app:app --reload --port 8000
 Open http://localhost:8000
 
 ## Enable real grading (recommended)
-1. In MATLAB: run `classification/exportResNetToONNX.m` - exports `results/resnet18_dr.onnx`
-2. Copy to `deploy/python_app/model/resnet18_dr.onnx`
+1. In MATLAB: install "Deep Learning Toolbox Converter for ONNX Model Format"
+   (Add-Ons Explorer), then run `classification/exportResNetToONNX.m` - exports
+   `results/handheld_r50_aptosidrid4.onnx` (live R50, 4-class merged)
+2. Copy to `deploy/python_app/model/handheld_r50_aptosidrid4.onnx`
 3. `pip install onnxruntime` and restart. `/screen` then returns grade + referable decision.
+Note: the Python side must feed *enhanced* 224 inputs (mirroring
+`screenFundusImage`) and expect 4 classes (No_DR/Mild/Moderate/SevereProlif).
 
 Without ONNX, `/screen` runs in honest DEMO-MODE: quality + enhancement only, no fabricated grade.
 

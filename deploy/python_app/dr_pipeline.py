@@ -16,7 +16,9 @@ CLASS_NAMES = ["Mild", "Moderate", "No_DR", "SevereProlif"]
 CLASS_TO_GRADE = {"No_DR": 0, "Mild": 1, "Moderate": 2, "SevereProlif": 3}
 REFERABLE_CLASSES = {"Moderate", "SevereProlif"}
 
-# Honest prototype metrics from MATLAB Model V1
+# Honest prototype metrics from MATLAB Model V1 - HISTORICAL BASELINE ONLY.
+# V1 is superseded by the live R50 model below; kept for reference, never
+# presented as the live deployment.
 MODEL_V1_METRICS = {
     "model": "ResNet-18 (MATLAB trained_resnet18.mat)",
     "test_accuracy": 78.8321,
@@ -25,6 +27,19 @@ MODEL_V1_METRICS = {
     "best_val_accuracy": 79.4545,
     "overfitting_note": "Train 96.88% vs Val 76.55% - strong evidence of overfitting. Preserve V1 as baseline.",
     "referable": {"sensitivity": 84.75, "specificity": 97.54, "precision": 95.94, "f1": 90.00},
+    "disclaimer": "Prototype public-test results. NOT clinical validation.",
+}
+
+# LIVE deployment metrics (traced): handheld R50 aptosidrid4, 4-class merged.
+# Source: HandheldDR/reports/all_models_report.txt:51-65 (APTOS-test n=548,
+# 13-Sep-2026). This is the model served when the ONNX file is present.
+LIVE_R50_METRICS = {
+    "model": "handheld R50 aptosidrid4 (MATLAB trainedNetHandheld)",
+    "classes": ["Mild", "Moderate", "No_DR", "SevereProlif"],
+    "test": "APTOS-test n=548",
+    "test_accuracy": 82.30,
+    "referable": {"sensitivity": 91.93, "specificity": 95.08, "f1": 92.34},
+    "source": "HandheldDR/reports/all_models_report.txt:51-65 (13-Sep-2026)",
     "disclaimer": "Prototype public-test results. NOT clinical validation.",
 }
 

@@ -123,7 +123,14 @@ def try_onnx_predict(img_rgb: np.ndarray):
         arr = arr.transpose(2, 0, 1)[None, :]
         out = np.array(sess.run(None, {sess.get_inputs()[0].name: arr})[0][0],
                        dtype=np.float64)
-        probs = out / max(out.sum(), 1e-12)
+        # Contract: outputs are already probabilities — use them verbatim.
+        # Never rescale or re-softmax; reject invalid vectors loudly.
+        probs = np.asarray(out, dtype=np.float64)
+        if not np.isfinite(probs).all() or np.any(probs < 0):
+            raise ValueError("ONNX output is not a valid probability vector.")
+        if not np.isclose(probs.sum(), 1.0, atol=1e-4):
+            raise ValueError(
+                "ONNX output is expected to already be normalized probabilities.")
         idx = int(np.argmax(probs))
         return CLASS_NAMES[idx], float(probs[idx]), [float(p) for p in probs]
     except Exception as e:
@@ -150,11 +157,17 @@ def screen_image(file_bytes: bytes) -> dict:
             "referableDR": None,
             "mode": "DEMO-MODE-NO-ONNX",
             "message": "No ONNX model found at model/handheld_r50_aptosidrid4.onnx. Install the ONNX Converter add-on, export MATLAB net via classification/exportResNetToONNX.m then set DR_ONNX_PATH.",
-            "modelV1Metrics": MODEL_V1_METRICS,
+            "historical_baseline_v1": {
+                "note": "Superseded V1 baseline for reference only - NOT the live model.",
+                **MODEL_V1_METRICS,
+            },
             "disclaimer": "AI-assisted screening prototype. Clinical confirmation required. Grad-CAM is attention, not lesion proof.",
         }
     if isinstance(onnx, dict) and "error" in onnx:
-        return {"error": onnx["error"], "modelV1Metrics": MODEL_V1_METRICS}
+        return {"error": onnx["error"], "historical_baseline_v1": {
+            "note": "Superseded V1 baseline for reference only - NOT the live model.",
+            **MODEL_V1_METRICS,
+        }}
     pred, conf, probs = onnx
     grade = CLASS_TO_GRADE[pred]
     referable = grade >= 2
@@ -169,6 +182,9 @@ def screen_image(file_bytes: bytes) -> dict:
         "ICDRGrade": grade,
         "referableDR": referable,
         "referralRecommendation": "REFER FOR OPHTHALMOLOGIST REVIEW" if referable else "NO IMMEDIATE REFERRAL - ROUTINE SCREENING",
-        "modelV1Metrics": MODEL_V1_METRICS,
+        "historical_baseline_v1": {
+            "note": "Superseded V1 baseline for reference only - NOT the live model.",
+            **MODEL_V1_METRICS,
+        },
         "disclaimer": "AI-assisted screening prototype. Clinical confirmation required.",
     }
